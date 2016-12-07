@@ -15,6 +15,12 @@ init();
 render();
 
 function init() {
+    for(var i=0;i<num/2;i++){
+        var put=text[i];
+        text[i]=text[num-i];
+        text[num-i]=put;
+    }
+    
     // レンダラの作成
     renderer = new THREE.WebGLRenderer();
     renderer.setClearColor(0x111111, 1); // 背景色の設定
