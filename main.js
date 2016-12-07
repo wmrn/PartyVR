@@ -17,8 +17,8 @@ render();
 function init() {
     for(var i=0;i<num/2;i++){
         var put=text[i];
-        text[i]=text[num-i];
-        text[num-i]=put;
+        text[i]=text[num-1-i];
+        text[num-1-i]=put;
     }
     
     // レンダラの作成
