@@ -4,8 +4,9 @@
 ## なぜ作ったか
 去年ぱぱんの誕生日プレゼント買いに行けなくて簡単なプログラムを組んであげた。  
 その延長で今年はVR作ってみた。離れててもサーバー立てれば届くのかな？  
-<img src="https://github.com/wmrn/PartyVR/tree/master/data/one_eye.png" widht="200"/>
-<img src="https://github.com/wmrn/PartyVR/tree/master/data/two_eyes.png" width="200"/>  
+<img src="https://github.com/wmrn/PartyVR/blob/master/data/one_eye.png" width="350"/>
+<img src="https://github.com/wmrn/PartyVR/blob/master/data/two_eyes.png" width="350"/>  
+※本来はもう少し小さなカラフルなライトがちりばめられてる。  
 
 ## こだわったところ
 * 2眼対応  
