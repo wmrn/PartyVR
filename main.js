@@ -23,7 +23,7 @@ function init() {
         var put=text[i];
         text[i]=text[num-1-i];
         text[num-1-i]=put;
-        add[i]=1;
+        //add[i]=1;
     }
     
     // レンダラの作成
