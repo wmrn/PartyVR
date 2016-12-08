@@ -1,4 +1,4 @@
-var vr_mode = true;
+var vr_mode = true;//2眼にするかしないか。
 var camera, scene, renderer;
 var effect, controls;
 var element, container;
@@ -7,6 +7,10 @@ var text = String("Let's Party").split('');
 
 var r = 60;
 var num = text.length;
+var mesh = [];
+var textGeometry = [];
+//var add = [];
+var degree = 0;
 
 var numLights = 10;
 var lights = [];
@@ -19,6 +23,7 @@ function init() {
         var put=text[i];
         text[i]=text[num-1-i];
         text[num-1-i]=put;
+        add[i]=1;
     }
     
     // レンダラの作成
@@ -115,9 +120,38 @@ function init() {
 }
 
 function render() {
-
     update();
     controls.update();
+    
+     for (var i = 0; i < num; i++) {
+        /* y座標を正弦波のy軸に対応させる */
+        degree = degree + 0.3;
+        var radian = degree * Math.PI / 180;
+        if(i%2==0){
+        var positionY = Math.sin(radian) * 10;
+        }else{
+            var positionY = -1*Math.sin(radian) * 10;
+        }
+        /* 球体の位置プロパティに値を設定 */
+        mesh[i].position.y = positionY;
+    }
+    /*for (var i = 0; i < num; i++) {
+        var Mesh = mesh[i];
+        if (i % 2 == 0) {
+            Mesh.position.y += add[i];
+        } else {
+            mesh[i].position.y += add[i];
+        }
+        var posy=mesh[i].position.y;
+        if (posy > 50) {
+            add[i] = -add[i];
+        }
+        if (posy < -10) {
+            add[i] = -add[i];
+        }
+        
+    }*/
+    
     requestAnimationFrame(render); // 再描画のリクエスト
     if (vr_mode) {
         effect.render(scene, camera);  // ステレオエフェクトまたはカードボードエフェクトでレンダリング
